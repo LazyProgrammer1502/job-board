@@ -235,8 +235,6 @@ In Atlas → **Network Access** → add `0.0.0.0/0` (Render uses dynamic IPs on 
 | DELETE | `/api/applications/:id`        | seeker   | Withdraw application                    |
 | GET    | `/api/applications/job/:jobId` | employer | Applicants for a job                    |
 | PUT    | `/api/applications/:id/status` | employer | Update application status               |
-| POST   | `/api/companies`               | employer | Create company profile                  |
-| PUT    | `/api/companies`               | employer | Update company profile                  |
 
 ---
 
