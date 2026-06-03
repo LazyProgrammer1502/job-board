@@ -10,7 +10,8 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com/atlas)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-[**Live Demo →**](https://your-app.vercel.app) &nbsp;|&nbsp; [**API →**](https://your-api.onrender.com/api/health)
+[**Live Demo →**](https://job-board-ten-peach.vercel.app)
+[**API →**](https://job-board-api-nk4k.onrender.com/api/health)
 
 </div>
 
@@ -18,13 +19,14 @@
 
 ## 📸 Screenshots
 
-> *(Add screenshots here after deploying — see the Screenshots section below)*
+> _(Add screenshots here after deploying — see the Screenshots section below)_
 
 ---
 
 ## ✨ Features
 
 ### For Job Seekers
+
 - Browse, search, and filter job listings (by title, type, location, experience)
 - Apply with cover letter and resume upload (PDF)
 - Track application status: **pending → reviewed → accepted / rejected**
@@ -34,6 +36,7 @@
 - Edit bio and skills list
 
 ### For Employers
+
 - Post, edit, and soft-delete job listings
 - Set job type, experience level, salary range, deadline
 - Toggle listings open/closed without deleting
@@ -42,6 +45,7 @@
 - Email notification sent to applicant on status change
 
 ### Technical
+
 - JWT authentication with role-based access control (`seeker` / `employer`)
 - Passwords hashed with bcrypt
 - NoSQL injection prevention with `express-mongo-sanitize`
@@ -56,15 +60,15 @@
 
 ## 🛠 Tech Stack
 
-| Layer | Technology |
-|---|---|
-| **Frontend** | React 18, React Router v6, Tailwind CSS, Axios |
-| **Backend** | Node.js, Express.js |
-| **Database** | MongoDB Atlas, Mongoose |
-| **Auth** | JSON Web Tokens (JWT), bcryptjs |
-| **File Storage** | Cloudinary |
-| **Email** | Nodemailer (Gmail SMTP) |
-| **Deployment** | Vercel (frontend) + Render (backend) |
+| Layer            | Technology                                     |
+| ---------------- | ---------------------------------------------- |
+| **Frontend**     | React 18, React Router v6, Tailwind CSS, Axios |
+| **Backend**      | Node.js, Express.js                            |
+| **Database**     | MongoDB Atlas, Mongoose                        |
+| **Auth**         | JSON Web Tokens (JWT), bcryptjs                |
+| **File Storage** | Cloudinary                                     |
+| **Email**        | Nodemailer (Gmail SMTP)                        |
+| **Deployment**   | Vercel (frontend) + Render (backend)           |
 
 ---
 
@@ -123,17 +127,20 @@ job-board/
 ## 🚀 Local Setup
 
 ### Prerequisites
+
 - Node.js 18+
 - A [MongoDB Atlas](https://mongodb.com/atlas) account (free tier)
 - A [Cloudinary](https://cloudinary.com) account (free tier)
 
 ### 1. Clone the repo
+
 ```bash
 git clone https://github.com/your-username/job-board.git
 cd job-board
 ```
 
 ### 2. Set up the server
+
 ```bash
 cd server
 npm install
@@ -141,6 +148,7 @@ cp .env.example .env
 ```
 
 Fill in `server/.env`:
+
 ```env
 PORT=5000
 NODE_ENV=development
@@ -160,6 +168,7 @@ npm run dev   # starts on :5000
 ```
 
 ### 3. Set up the client
+
 ```bash
 cd ../client
 npm install
@@ -200,32 +209,33 @@ In Atlas → **Network Access** → add `0.0.0.0/0` (Render uses dynamic IPs on 
 
 ## 📡 API Reference
 
-| Method | Endpoint | Auth | Description |
-|---|---|---|---|
-| POST | `/api/auth/register` | — | Register (seeker or employer) |
-| POST | `/api/auth/login` | — | Login, returns JWT |
-| GET | `/api/auth/me` | ✅ | Get current user |
-| PUT | `/api/auth/me` | ✅ | Update name/bio/skills |
-| GET | `/api/jobs` | — | List jobs (search, filter, paginate) |
-| GET | `/api/jobs/:id` | — | Single job detail |
-| POST | `/api/jobs` | employer | Create job |
-| PUT | `/api/jobs/:id` | employer | Update own job |
-| DELETE | `/api/jobs/:id` | employer | Soft-delete own job |
-| GET | `/api/jobs/my-jobs` | employer | Employer's own listings |
-| PUT | `/api/jobs/:id/save` | seeker | Toggle save job |
-| POST | `/api/applications/:jobId` | seeker | Apply (multipart: resume + coverLetter) |
-| GET | `/api/applications/my` | seeker | My applications |
-| DELETE | `/api/applications/:id` | seeker | Withdraw application |
-| GET | `/api/applications/job/:jobId` | employer | Applicants for a job |
-| PUT | `/api/applications/:id/status` | employer | Update application status |
-| POST | `/api/companies` | employer | Create company profile |
-| PUT | `/api/companies` | employer | Update company profile |
+| Method | Endpoint                       | Auth     | Description                             |
+| ------ | ------------------------------ | -------- | --------------------------------------- |
+| POST   | `/api/auth/register`           | —        | Register (seeker or employer)           |
+| POST   | `/api/auth/login`              | —        | Login, returns JWT                      |
+| GET    | `/api/auth/me`                 | ✅       | Get current user                        |
+| PUT    | `/api/auth/me`                 | ✅       | Update name/bio/skills                  |
+| GET    | `/api/jobs`                    | —        | List jobs (search, filter, paginate)    |
+| GET    | `/api/jobs/:id`                | —        | Single job detail                       |
+| POST   | `/api/jobs`                    | employer | Create job                              |
+| PUT    | `/api/jobs/:id`                | employer | Update own job                          |
+| DELETE | `/api/jobs/:id`                | employer | Soft-delete own job                     |
+| GET    | `/api/jobs/my-jobs`            | employer | Employer's own listings                 |
+| PUT    | `/api/jobs/:id/save`           | seeker   | Toggle save job                         |
+| POST   | `/api/applications/:jobId`     | seeker   | Apply (multipart: resume + coverLetter) |
+| GET    | `/api/applications/my`         | seeker   | My applications                         |
+| DELETE | `/api/applications/:id`        | seeker   | Withdraw application                    |
+| GET    | `/api/applications/job/:jobId` | employer | Applicants for a job                    |
+| PUT    | `/api/applications/:id/status` | employer | Update application status               |
+| POST   | `/api/companies`               | employer | Create company profile                  |
+| PUT    | `/api/companies`               | employer | Update company profile                  |
 
 ---
 
 ## 📷 Adding Screenshots
 
 After deploying, take screenshots of:
+
 1. `/jobs` — job listing page with filters
 2. `/jobs/:id` — job detail with apply modal open
 3. `/employer/dashboard` — dashboard with jobs table
@@ -239,8 +249,8 @@ Add them to a `/screenshots` folder and update the Screenshots section above.
 
 **Muhammad Faizan**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-muhammad--faizan.vercel.app-blue?style=flat-square)](https://muhammad-faizan-portfolio.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-your--username-181717?style=flat-square&logo=github)](https://github.com/your-username)
+[![Portfolio](https://img.shields.io/badge/Portfolio-...)](https://muhammad-faizan-portfolio.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-LazyProgrammer1502-181717?style=flat-square&logo=github)](https://github.com/LazyProgrammer1502)
 
 ---
 
