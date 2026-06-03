@@ -244,8 +244,8 @@ In Atlas → **Network Access** → add `0.0.0.0/0` (Render uses dynamic IPs on 
 
 **Muhammad Faizan**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-...)](https://muhammad-faizan-portfolio.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-LazyProgrammer1502-181717?style=flat-square&logo=github)](https://github.com/LazyProgrammer1502)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=flat-square)](https://muhammad-faizan-portfolio.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-LazyProgrammer1502-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/LazyProgrammer1502)
 
 ---
 
