@@ -19,7 +19,15 @@
 
 ## 📸 Screenshots
 
-> _(Add screenshots here after deploying — see the Screenshots section below)_
+## 📸 Screenshots
+
+| Jobs Listing                    | Job Detail                                  |
+| ------------------------------- | ------------------------------------------- |
+| ![Jobs](./screenshots/jobs.png) | ![Job Detail](./screenshots/job-detail.png) |
+
+| Employer Dashboard                                 | My Applications                                        |
+| -------------------------------------------------- | ------------------------------------------------------ |
+| ![Dashboard](./screenshots/employer-dashboard.png) | ![Applications](./screenshots/seeker-applications.png) |
 
 ---
 
@@ -188,7 +196,7 @@ The frontend proxies `/api` requests to `:5000` automatically via Vite config.
 3. Connect your repo, set **Root Directory** to `server`
 4. Build command: `npm install` | Start command: `npm start`
 5. Add all environment variables from `.env.example` in the **Environment** tab
-6. Deploy — copy the live URL (e.g. `https://job-board-api.onrender.com`)
+6. Deploy — (https://job-board-api-nk4k.onrender.com)
 
 ### Frontend → Vercel
 
@@ -196,10 +204,10 @@ The frontend proxies `/api` requests to `:5000` automatically via Vite config.
 2. Import your repo, set **Root Directory** to `client`
 3. Add one environment variable:
    ```
-   VITE_API_URL = https://job-board-api.onrender.com
+   VITE_API_URL = https://job-board-api-nk4k.onrender.com
    ```
 4. Deploy — copy the live URL
-5. Go back to Render → add `CLIENT_URL = https://your-app.vercel.app`
+5. 5. Go back to Render → add `CLIENT_URL = https://job-board-ten-peach.vercel.app`
 
 ### MongoDB Atlas — allow all IPs for Render
 
@@ -229,19 +237,6 @@ In Atlas → **Network Access** → add `0.0.0.0/0` (Render uses dynamic IPs on 
 | PUT    | `/api/applications/:id/status` | employer | Update application status               |
 | POST   | `/api/companies`               | employer | Create company profile                  |
 | PUT    | `/api/companies`               | employer | Update company profile                  |
-
----
-
-## 📷 Adding Screenshots
-
-After deploying, take screenshots of:
-
-1. `/jobs` — job listing page with filters
-2. `/jobs/:id` — job detail with apply modal open
-3. `/employer/dashboard` — dashboard with jobs table
-4. `/seeker/applications` — applications tracker with timeline
-
-Add them to a `/screenshots` folder and update the Screenshots section above.
 
 ---
 
